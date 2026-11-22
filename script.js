@@ -21,3 +21,18 @@ const menu=document.getElementById('menu');const nav=document.getElementById('na
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=map.get(e.target.id);if(a){a.classList.add('active');a.scrollIntoView({inline:'center',block:'nearest'})}}}),{rootMargin:'-35% 0px -60% 0px'});
   map.forEach((a,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});
 })();
+
+/* v2 motion: stagger indexes, counters, tilt, parallax numerals, back-to-top */
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.panel-list,.tag-cloud,.review-table tbody').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--k',i)));
+  const counters=[...document.querySelectorAll('[data-count]')];
+  const run=el=>{const to=+el.dataset.count;if(reduce){el.textContent=to;return}const t0=performance.now(),d=1500;const f=t=>{const p=Math.min((t-t0)/d,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)};
+  if(counters.length){if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target);io.unobserve(e.target)}}),{threshold:.6});counters.forEach(c=>io.observe(c))}else counters.forEach(c=>c.textContent=c.dataset.count)}
+  if(matchMedia('(hover:hover)').matches&&!reduce){document.querySelectorAll('.panel').forEach(p=>{p.addEventListener('pointermove',e=>{const r=p.getBoundingClientRect();p.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*5+'deg');p.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*5+'deg')});p.addEventListener('pointerleave',()=>{p.style.setProperty('--rx','0deg');p.style.setProperty('--ry','0deg')})})}
+  const blocks=[...document.querySelectorAll('.review-block')];const top=document.getElementById('toTop');let tick=false;
+  const upd=()=>{tick=false;const vh=innerHeight;if(!reduce)blocks.forEach(b=>{const r=b.getBoundingClientRect();if(r.bottom>0&&r.top<vh)b.style.setProperty('--py',((r.top-vh/2)*-0.12)+'px')});
+    if(top){const h=document.documentElement,m=h.scrollHeight-h.clientHeight;top.style.setProperty('--p',m>0?h.scrollTop/m*100:0);top.classList.toggle('show',h.scrollTop>600)}};
+  addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+  if(top)top.addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
+})();
