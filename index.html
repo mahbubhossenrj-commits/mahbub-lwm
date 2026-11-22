@@ -9,13 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+<div class="progress" id="progress" aria-hidden="true"></div>
 <header class="header">
   <a class="logo" href="#home"><span class="logo-symbol">TM</span><span>TAWSIF MAHBUB<span class="dot">.</span></span></a>
   <nav id="nav" class="nav">
     <a href="#about" data-en="ABOUT" data-bn="পরিচিতি">ABOUT</a>
     <a href="#interests" data-en="INTERESTS" data-bn="আগ্রহ">INTERESTS</a>
+    <a href="#academics" data-en="ACADEMICS" data-bn="একাডেমিক">ACADEMICS</a>
     <a href="#platforms" data-en="PLATFORMS" data-bn="প্ল্যাটফর্ম">PLATFORMS</a>
     <a href="#contact" data-en="CONTACT" data-bn="যোগাযোগ">CONTACT</a>
   </nav>
@@ -48,7 +51,7 @@
     </div>
   </section>
 
-  <div class="ticker"><div>BOTANY <b>✳</b> WEB DEVELOPMENT <b>✳</b> CONTENT CREATION <b>✳</b> LEARNING <b>✳</b> BOTANY <b>✳</b> WEB DEVELOPMENT <b>✳</b></div></div>
+  <div class="ticker"><div class="ticker-track"><span>BOTANY <b>✳</b> MICROBIOLOGY <b>✳</b> MYCOLOGY <b>✳</b> PHYCOLOGY <b>✳</b> ZOOLOGY <b>✳</b> CHEMISTRY <b>✳</b> ICT <b>✳</b> WEB DEVELOPMENT <b>✳</b> CONTENT CREATION <b>✳</b> LEARNING <b>✳</b> </span><span aria-hidden="true">BOTANY <b>✳</b> MICROBIOLOGY <b>✳</b> MYCOLOGY <b>✳</b> PHYCOLOGY <b>✳</b> ZOOLOGY <b>✳</b> CHEMISTRY <b>✳</b> ICT <b>✳</b> WEB DEVELOPMENT <b>✳</b> CONTENT CREATION <b>✳</b> LEARNING <b>✳</b> </span></div></div>
 
   <section id="about" class="section wrap">
     <div class="section-label">01 / <span data-en="ABOUT ME" data-bn="আমার পরিচিতি">ABOUT ME</span></div>
@@ -73,8 +76,25 @@
     </div>
   </section>
 
+  <section id="academics" class="academics-band">
+    <span class="acad-orb acad-orb-a"></span><span class="acad-orb acad-orb-b"></span><span class="acad-orb acad-orb-c"></span>
+    <div class="wrap academics-inner">
+      <div class="section-label">03 / <span data-en="ACADEMICS" data-bn="একাডেমিক">ACADEMICS</span></div>
+      <div class="platform-heading"><h2 data-en="NU Honours · <em>Department of Botany.</em>" data-bn="জাতীয় বিশ্ববিদ্যালয় অনার্স · <em>উদ্ভিদবিজ্ঞান বিভাগ।</em>">NU Honours · <em>Department of Botany.</em></h2><p data-en="My interest subjects" data-bn="আমার আগ্রহের বিষয়সমূহ">My interest subjects</p></div>
+      <div class="chips"><span class="chip" data-en="National University (NU)" data-bn="জাতীয় বিশ্ববিদ্যালয় (NU)">National University (NU)</span><span class="chip" data-en="Honours Programme" data-bn="অনার্স প্রোগ্রাম">Honours Programme</span><span class="chip" data-en="Department of Botany" data-bn="উদ্ভিদবিজ্ঞান বিভাগ">Department of Botany</span><span class="chip chip-accent" data-en="6 interest subjects" data-bn="৬টি আগ্রহের বিষয়">6 interest subjects</span></div>
+      <div class="subject-grid">
+      <article class="subject-card" style="--accent:#2f6fb5;--soft:#e3eefb"><span class="subject-num">01</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/><circle cx="10.5" cy="11" r=".9"/><circle cx="13.5" cy="13" r=".9"/></svg></div><h3 data-en="Microbiology" data-bn="অণুজীববিজ্ঞান">Microbiology</h3><p data-en="Exploring bacteria, viruses and other microscopic life forms." data-bn="ব্যাকটেরিয়া, ভাইরাসসহ অণুজীবের জগৎ অন্বেষণ।">Exploring bacteria, viruses and other microscopic life forms.</p></article>
+      <article class="subject-card" style="--accent:#b7791f;--soft:#fbf0da"><span class="subject-num">02</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 8 0 0 1 18 0z"/><path d="M9 12v5a3 3 0 0 0 6 0v-5"/><circle cx="8" cy="9" r=".8"/><circle cx="14" cy="8" r=".8"/></svg></div><h3 data-en="Mycology" data-bn="ছত্রাকবিজ্ঞান">Mycology</h3><p data-en="Studying fungi — from yeasts and moulds to mushrooms." data-bn="ইস্ট, মোল্ড থেকে মাশরুম পর্যন্ত ছত্রাকের অধ্যয়ন।">Studying fungi — from yeasts and moulds to mushrooms.</p></article>
+      <article class="subject-card" style="--accent:#1f8a70;--soft:#ddf3ec"><span class="subject-num">03</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21c-2-4 2-6 0-10s2-6 0-8"/><path d="M13 21c-2-4 2-6 0-10s2-6 0-8"/><path d="M19 21c-2-3 1-5 0-8"/></svg></div><h3 data-en="Phycology" data-bn="শৈবালবিজ্ঞান">Phycology</h3><p data-en="Understanding algae and their role in aquatic ecosystems." data-bn="শৈবাল ও জলজ বাস্তুতন্ত্রে এদের ভূমিকা বোঝা।">Understanding algae and their role in aquatic ecosystems.</p></article>
+      <article class="subject-card" style="--accent:#c8553d;--soft:#fbe5df"><span class="subject-num">04</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="10" r="1.8"/><circle cx="10" cy="6" r="1.8"/><circle cx="14" cy="6" r="1.8"/><circle cx="18" cy="10" r="1.8"/><path d="M8 18c0-3 2-5 4-5s4 2 4 5c0 2-2 2-4 1.2C10 20 8 20 8 18z"/></svg></div><h3 data-en="Zoology-I" data-bn="প্রাণিবিজ্ঞান-I">Zoology-I</h3><p data-en="Learning the basics of animal diversity and animal life." data-bn="প্রাণিবৈচিত্র্য ও প্রাণীজীবনের মৌলিক ধারণা শেখা।">Learning the basics of animal diversity and animal life.</p></article>
+      <article class="subject-card" style="--accent:#7a5bc0;--soft:#ece6f8"><span class="subject-num">05</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg></div><h3 data-en="Chemistry-I" data-bn="রসায়ন-I">Chemistry-I</h3><p data-en="Core chemistry concepts that support the life sciences." data-bn="জীববিজ্ঞানের ভিত্তি গড়ে দেওয়া রসায়নের মৌলিক বিষয়।">Core chemistry concepts that support the life sciences.</p></article>
+      <article class="subject-card" style="--accent:#203d70;--soft:#e2e8f3"><span class="subject-num">06</span><div class="subject-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M9.5 8.5 8 10l1.5 1.5M14.5 8.5 16 10l-1.5 1.5"/></svg></div><h3 data-en="ICT" data-bn="আইসিটি">ICT</h3><p data-en="Information and communication technology for the digital age." data-bn="ডিজিটাল যুগের তথ্য ও যোগাযোগ প্রযুক্তি।">Information and communication technology for the digital age.</p></article>
+      </div>
+    </div>
+  </section>
+
   <section id="platforms" class="section wrap platforms-section">
-    <div class="section-label">03 / <span data-en="MY PLATFORMS" data-bn="আমার প্ল্যাটফর্ম">MY PLATFORMS</span></div>
+    <div class="section-label">04 / <span data-en="MY PLATFORMS" data-bn="আমার প্ল্যাটফর্ম">MY PLATFORMS</span></div>
     <div class="platform-heading"><h2 data-en="Find me on the <em>internet.</em>" data-bn="অনলাইনে আমার <em>ঠিকানা।</em>">Find me on the <em>internet.</em></h2><p data-en="Different spaces. One curious mind." data-bn="ভিন্ন ভিন্ন প্ল্যাটফর্ম, একই কৌতূহলী মন।">Different spaces. One curious mind.</p></div>
     <div class="platform-cards">
       <a class="platform-card youtube-card" href="https://youtube.com/@learnwith_tawsifmahbub" target="_blank" rel="noopener"><span class="platform-card-top">01 / VIDEO & LEARNING</span><span class="platform-brand youtube-brand"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></span><strong>Learn with Mahbub</strong><small>YouTube Channel</small><span class="platform-arrow">↗</span></a>
@@ -86,7 +106,7 @@
   </section>
 
   <section id="contact" class="contact-band">
-    <div class="wrap contact-content"><div><div class="section-label">04 / CONTACT</div><h2 data-en="Let's make<br>something <em>meaningful.</em>" data-bn="চলুন তৈরি করি<br>অর্থবহ <em>কিছু।</em>">Let's make<br>something <em>meaningful.</em></h2></div><a class="contact-mail" href="mailto:mahbubhossenrj@gmail.com">mahbubhossenrj@gmail.com <span>↗</span></a></div>
+    <div class="wrap contact-content"><div><div class="section-label">05 / CONTACT</div><h2 data-en="Let's make<br>something <em>meaningful.</em>" data-bn="চলুন তৈরি করি<br>অর্থবহ <em>কিছু।</em>">Let's make<br>something <em>meaningful.</em></h2></div><a class="contact-mail" href="mailto:mahbubhossenrj@gmail.com">mahbubhossenrj@gmail.com <span>↗</span></a></div>
   </section>
 </main>
 
@@ -98,7 +118,7 @@
       <h4>ADDRESS</h4><p>Vill: Bridashuria, Post: Shoiljana,<br>Thana: Chauhali, Dist: Sirajganj,<br>Bangladesh</p>
       <h4>EMAIL & PHONE</h4><p><a href="mailto:mahbubhossenrj@gmail.com">mahbubhossenrj@gmail.com</a><br><a href="tel:+8801964989650">+880 1964-989650</a></p>
     </div>
-    <div class="footer-column"><h4 data-en="EXPLORE" data-bn="ঘুরে দেখুন">EXPLORE</h4><a href="#home" data-en="Home" data-bn="হোম">Home</a><a href="#about" data-en="About me" data-bn="আমার পরিচিতি">About me</a><a href="#interests" data-en="My interests" data-bn="আমার আগ্রহ">My interests</a><a href="#platforms" data-en="Online platforms" data-bn="অনলাইন প্ল্যাটফর্ম">Online platforms</a><a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></div>
+    <div class="footer-column"><h4 data-en="EXPLORE" data-bn="ঘুরে দেখুন">EXPLORE</h4><a href="#home" data-en="Home" data-bn="হোম">Home</a><a href="#about" data-en="About me" data-bn="আমার পরিচিতি">About me</a><a href="#interests" data-en="My interests" data-bn="আমার আগ্রহ">My interests</a><a href="#academics" data-en="Academics" data-bn="একাডেমিক">Academics</a><a href="#platforms" data-en="Online platforms" data-bn="অনলাইন প্ল্যাটফর্ম">Online platforms</a><a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a></div>
     <div class="footer-column"><h4 data-en="MY PLATFORMS" data-bn="আমার প্ল্যাটফর্ম">MY PLATFORMS</h4><a href="https://youtube.com/@learnwith_tawsifmahbub" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/tawsif.tm/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/share/1DjAcFJDGX/" target="_blank" rel="noopener">Facebook Profile</a><a href="https://www.facebook.com/share/1A8dCCLUuZ/" target="_blank" rel="noopener">Facebook Page 01</a><a href="https://www.facebook.com/share/1DKMi7rycw/" target="_blank" rel="noopener">Facebook Page 02</a></div>
     <div class="footer-column"><h4 data-en="SAY HELLO" data-bn="যোগাযোগ করুন">SAY HELLO</h4><a href="mailto:mahbubhossenrj@gmail.com">Send an email ↗</a><a href="tel:+8801964989650">Call me ↗</a><a href="https://www.instagram.com/tawsif.tm/" target="_blank" rel="noopener">Instagram ↗</a></div>
   </div>
