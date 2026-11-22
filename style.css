@@ -119,3 +119,72 @@ body.bn .subject-card h3{font-family:"Noto Sans Bengali",sans-serif}
 @media(max-width:900px){.subject-grid{grid-template-columns:repeat(2,1fr)}.academics-band{padding:90px 0}}
 @media(max-width:680px){.academics-band{padding:70px 0}.subject-grid{grid-template-columns:1fr;gap:14px}.subject-card{min-height:auto;padding:24px}.chips{margin-bottom:30px}.chip{font-size:10px;padding:8px 13px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}html.js .reveal{opacity:1}}
+
+/* ===== CTA on home ===== */
+.review-cta{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:22px;padding:32px 36px;border-radius:22px;background:linear-gradient(120deg,#203d70,#37589c);color:#fff;text-decoration:none;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.review-cta:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-60px;top:-110px;background:#ffffff14;transition:transform .5s}
+.review-cta:hover{transform:translateY(-5px);box-shadow:0 22px 44px #203d7040}.review-cta:hover:before{transform:scale(1.4)}
+.cta-kicker{display:block;font-size:10px;letter-spacing:2px;font-weight:700;color:#f8e8c8;margin-bottom:10px}
+.review-cta strong{display:block;font:600 clamp(24px,3vw,34px)/1.3 "Playfair Display",serif}
+body.bn .review-cta strong{font-family:"Noto Sans Bengali",sans-serif}
+.review-cta p{margin:10px 0 0;font-size:13px;line-height:1.8;color:#d6e0f2;max-width:520px}
+.cta-arrow{flex:none;width:58px;height:58px;border-radius:50%;border:1px solid #ffffff66;display:grid;place-items:center;font-size:22px;position:relative;transition:transform .35s,background .3s,color .3s}
+.review-cta:hover .cta-arrow{transform:rotate(45deg);background:#fff;color:#203d70}
+
+/* ===== Botany review page ===== */
+.review-page,.review-page h1,.review-page h2,.review-page h3,.review-page h4{font-family:"Noto Sans Bengali","DM Sans",sans-serif}
+html{scroll-padding-top:130px}
+.review-hero{position:relative;overflow:hidden;padding:70px 0 60px;text-align:center;background:linear-gradient(180deg,#fff 0%,#eef3fa 100%);border-bottom:1px solid #deded8}
+.review-hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.back-link{align-self:flex-start;font-size:12px;font-weight:700;text-decoration:none;color:#555;border-bottom:1px solid #ccc;padding-bottom:3px;transition:color .2s,transform .2s}.back-link:hover{color:#203d70;transform:translateX(-4px)}
+.review-hero .hero-kicker{margin:44px 0 18px;font-size:11px;letter-spacing:3px;font-weight:700;color:#6485bd}
+.review-hero h1{margin:0;max-width:900px;font-weight:700;font-size:clamp(34px,5.6vw,70px);line-height:1.3;color:#203d70}
+.review-hero h1 span{background:linear-gradient(90deg,#6485bd,#1f8a70,#6485bd);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.review-intro{max-width:760px;margin:26px 0 30px;font-size:16px;line-height:2.05;color:#555}
+.chips-center{justify-content:center;margin:0}
+.toc{position:sticky;top:0;z-index:60;background:#F5F5F2ee;backdrop-filter:blur(10px);border-bottom:1px solid #deded8}
+.toc-inner{width:min(1390px,calc(100% - 64px));margin:auto;display:flex;gap:6px;overflow-x:auto;padding:10px 0;scrollbar-width:none}.toc-inner::-webkit-scrollbar{display:none}
+.toc a{flex:none;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;color:#555;text-decoration:none;transition:background .25s,color .25s}
+.toc a:hover{background:#e6ecf6;color:#203d70}.toc a.active{background:#203d70;color:#fff}
+.review-block{padding:80px 0;border-bottom:1px solid #e3e3dd}
+.review-block:nth-of-type(even){background:#f0f2ee}
+.review-block h2{margin:22px 0 22px;font-weight:700;font-size:clamp(26px,3.6vw,42px);line-height:1.35;color:#14213d}
+.review-lead{max-width:780px;margin:0 0 30px;font-size:16px;line-height:2;color:#555}
+.review-note{max-width:780px;margin:30px 0 0;padding-left:18px;border-left:3px solid #6485bd;font-size:15px;line-height:1.95;color:#444}
+.sub-h3{margin:34px 0 16px;font-size:18px;font-weight:700;color:#203d70}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 4px}
+.tag{padding:9px 17px;border:1px solid #d3dbe8;border-radius:999px;background:#fff;font:600 13px "DM Sans","Noto Sans Bengali",sans-serif;color:#203d70;cursor:default;transition:transform .25s cubic-bezier(.2,.7,.2,1),background .25s,color .25s,box-shadow .25s}
+.tag:hover{transform:translateY(-4px) scale(1.04);background:#203d70;color:#fff;box-shadow:0 10px 20px #203d7030}
+.check-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.check-list li{position:relative;padding:18px 20px 18px 62px;background:#fff;border:1px solid #e2e6ed;border-radius:16px;font-size:15px;line-height:1.7;transition:transform .3s,box-shadow .3s,border-color .3s}
+.check-list li:before{content:"✓";position:absolute;left:18px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#ddf3ec;color:#1f8a70;font-weight:700;font-size:14px;transition:background .3s,color .3s}
+.check-list li:hover{transform:translateX(6px);border-color:#1f8a70;box-shadow:0 12px 26px #172e5012}.check-list li:hover:before{background:#1f8a70;color:#fff}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.stack{display:grid;gap:18px}
+.panel{padding:28px 30px;background:#fff;border:1px solid #e2e6ed;border-radius:20px;transition:box-shadow .3s,border-color .3s}
+.panel:hover{box-shadow:0 18px 38px #172e5012;border-color:#c5d1e4}
+.panel h3{margin:0 0 18px;font-size:20px;font-weight:700;color:#14213d}
+.panel h4{margin:22px 0 12px;font-size:12px;letter-spacing:1.5px;font-weight:700;color:#6485bd}
+.panel h3+h4{margin-top:0}
+.panel-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.panel-list li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.7;color:#333}
+.panel-list li:before{content:"";position:absolute;left:0;top:.7em;width:8px;height:8px;border-radius:50%;background:#6485bd;transition:transform .25s}
+.panel-list li:hover:before{transform:scale(1.5)}
+.panel-list.cols-3{grid-template-columns:repeat(3,1fr);gap:12px 24px}
+.panel-note{margin:18px 0 0;font-size:14px;line-height:1.9;color:#555}.panel-note.first{margin:0 0 14px}
+.table-wrap{overflow-x:auto;border:1px solid #e2e6ed;border-radius:20px;background:#fff}
+.review-table{width:100%;border-collapse:collapse;min-width:520px}
+.review-table th{padding:16px 24px;text-align:left;font-size:12px;letter-spacing:1.5px;background:#203d70;color:#fff}
+.review-table td{padding:18px 24px;font-size:15px;line-height:1.7;border-top:1px solid #edf0f4}
+.review-table td:first-child{width:30%;font-weight:700;color:#203d70}
+.review-table tbody tr{transition:background .2s}.review-table tbody tr:hover{background:#eef3fa}
+.review-finale{padding:90px 0 100px}
+.quote-block{position:relative;overflow:hidden;padding:64px clamp(26px,6vw,80px);border-radius:28px;background:linear-gradient(135deg,#203d70,#2f5aa3 60%,#1f8a70);color:#fff;text-align:center}
+.quote-block:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;left:-120px;bottom:-190px;background:#ffffff12;animation:drift 12s ease-in-out infinite}
+.quote-mark{position:absolute;top:6px;left:30px;font:700 150px/1 "Playfair Display",serif;color:#ffffff1f}
+.quote-block h2{position:relative;margin:0 0 20px;font-weight:700;font-size:clamp(26px,4vw,46px);line-height:1.4}
+.quote-block p{position:relative;max-width:680px;margin:0 auto 28px;font-size:16px;line-height:2;color:#dfe8f6}
+.quote-block blockquote{position:relative;margin:0 auto 34px;padding:18px 26px;max-width:560px;border:1px solid #ffffff4d;border-radius:16px;font:italic 500 clamp(18px,2.4vw,24px)/1.5 "Playfair Display",serif;color:#f8e8c8}
+.signature{position:relative}.signature strong{display:block;font-size:18px}.signature span{display:block;margin-top:6px;font-size:13px;line-height:1.8;color:#c9d7ee}
+@media(max-width:900px){.duo{grid-template-columns:1fr}.panel-list.cols-3{grid-template-columns:repeat(2,1fr)}.toc-inner{width:calc(100% - 36px)}}
+@media(max-width:680px){.review-hero{padding:48px 0 44px}.review-hero .hero-kicker{margin-top:32px}.review-block{padding:56px 0}.check-list{grid-template-columns:1fr}.panel-list.cols-3{grid-template-columns:1fr}.panel{padding:22px 20px}.review-cta{padding:26px 22px}.cta-arrow{width:46px;height:46px}.quote-block{padding:48px 22px}.quote-mark{font-size:100px;left:14px}.review-finale{padding:60px 0 70px}}

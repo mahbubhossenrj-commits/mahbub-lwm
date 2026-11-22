@@ -1,7 +1,7 @@
 const menu=document.getElementById('menu');const nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));let lang='en';document.getElementById('language').addEventListener('click',()=>{lang=lang==='en'?'bn':'en';document.documentElement.lang=lang;document.body.classList.toggle('bn',lang==='bn');document.querySelectorAll('[data-en][data-bn]').forEach(el=>el.innerHTML=el.dataset[lang]);document.getElementById('language').textContent=lang==='en'?'বাংলা':'English'});document.getElementById('year').textContent=new Date().getFullYear();
 /* motion: scroll reveal, card spotlight, progress bar */
 (function(){
-  const sel='.section-label,.about-grid h2,.about-copy,.interest-grid article,.platform-heading,.chips,.subject-card,.platform-card,.contact-content>*';
+  const sel='.section-label,.about-grid h2,.about-copy,.interest-grid article,.platform-heading,.chips,.subject-card,.platform-card,.contact-content>*,.review-cta,.review-block h2,.review-lead,.sub-h3,.panel,.check-list li,.tag-cloud,.table-wrap,.review-note,.quote-block';
   const els=[...document.querySelectorAll(sel)];
   els.forEach(el=>{el.classList.add('reveal');const sib=[...el.parentElement.children].filter(c=>c.matches(sel));el.style.setProperty('--d',(Math.max(sib.indexOf(el),0)%3*0.12)+'s')});
   if('IntersectionObserver' in window){
@@ -12,4 +12,12 @@ const menu=document.getElementById('menu');const nav=document.getElementById('na
   const bar=document.getElementById('progress');
   const upd=()=>{const h=document.documentElement;const m=h.scrollHeight-h.clientHeight;bar.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'};
   addEventListener('scroll',upd,{passive:true});upd();
+})();
+
+/* review page: table-of-contents scrollspy */
+(function(){
+  const links=[...document.querySelectorAll('.toc a')];if(!links.length||!('IntersectionObserver' in window))return;
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=map.get(e.target.id);if(a){a.classList.add('active');a.scrollIntoView({inline:'center',block:'nearest'})}}}),{rootMargin:'-35% 0px -60% 0px'});
+  map.forEach((a,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});
 })();
