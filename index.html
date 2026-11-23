@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("tm-seen"))document.documentElement.classList.add("noloader");sessionStorage.setItem("tm-seen","1")}catch(e){}</script>
 </head>
 <body>
+<div class="loader" aria-hidden="true"><span>TM</span><i></i></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header class="header">
   <a class="logo" href="#home"><span class="logo-symbol">TM</span><span>TAWSIF MAHBUB<span class="dot">.</span></span></a>
@@ -50,6 +53,14 @@
       </div>
     </div>
   </section>
+
+  <section id="cover" class="cover-section wrap">
+    <figure class="cover-card">
+      <picture><source srcset="assets/cover.webp" type="image/webp"><img src="assets/cover.jpg" alt="Tawsif Mahbub — Better Editor cover" width="1672" height="941" loading="lazy" decoding="async"></picture>
+      <figcaption><span class="cover-dot"></span><span data-en="TAWSIF MAHBUB · BETTER EDITOR" data-bn="তাওসিফ মাহবুব · বেটার এডিটর">TAWSIF MAHBUB · BETTER EDITOR</span></figcaption>
+    </figure>
+  </section>
+
 
   <div class="ticker"><div class="ticker-track"><span>BOTANY <b>✳</b> MICROBIOLOGY <b>✳</b> MYCOLOGY <b>✳</b> PHYCOLOGY <b>✳</b> ZOOLOGY <b>✳</b> CHEMISTRY <b>✳</b> ICT <b>✳</b> WEB DEVELOPMENT <b>✳</b> CONTENT CREATION <b>✳</b> LEARNING <b>✳</b> </span><span aria-hidden="true">BOTANY <b>✳</b> MICROBIOLOGY <b>✳</b> MYCOLOGY <b>✳</b> PHYCOLOGY <b>✳</b> ZOOLOGY <b>✳</b> CHEMISTRY <b>✳</b> ICT <b>✳</b> WEB DEVELOPMENT <b>✳</b> CONTENT CREATION <b>✳</b> LEARNING <b>✳</b> </span></div></div>
 

@@ -8,10 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");try{if(sessionStorage.getItem("tm-seen"))document.documentElement.classList.add("noloader");sessionStorage.setItem("tm-seen","1")}catch(e){}</script>
 </head>
 <body class="review-page">
+<div class="loader" aria-hidden="true"><span>TM</span><i></i></div>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header class="header">
   <a class="logo" href="index.html#home"><span class="logo-symbol">TM</span><span>TAWSIF MAHBUB<span class="dot">.</span></span></a>
