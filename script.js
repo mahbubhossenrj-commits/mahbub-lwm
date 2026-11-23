@@ -1,7 +1,7 @@
 const menu=document.getElementById('menu');const nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));let lang='en';document.getElementById('language').addEventListener('click',()=>{lang=lang==='en'?'bn':'en';document.documentElement.lang=lang;document.body.classList.toggle('bn',lang==='bn');document.querySelectorAll('[data-en][data-bn]').forEach(el=>el.innerHTML=el.dataset[lang]);document.getElementById('language').textContent=lang==='en'?'বাংলা':'English'});document.getElementById('year').textContent=new Date().getFullYear();
 /* motion: scroll reveal, card spotlight, progress bar */
 (function(){
-  const sel='.section-label,.about-grid h2,.about-copy,.interest-grid article,.platform-heading,.chips,.subject-card,.platform-card,.contact-content>*,.review-cta,.review-block h2,.review-lead,.sub-h3,.panel,.check-list li,.tag-cloud,.table-wrap,.review-note,.quote-block';
+  const sel='.section-label,.about-grid h2,.about-copy,.interest-grid article,.platform-heading,.chips,.subject-card,.platform-card,.contact-content>*,.road-scene,.yt-wrap,.webdev-info,.review-cta,.review-block h2,.review-lead,.sub-h3,.panel,.check-list li,.tag-cloud,.table-wrap,.review-note,.quote-block';
   const els=[...document.querySelectorAll(sel)];
   els.forEach(el=>{el.classList.add('reveal');const sib=[...el.parentElement.children].filter(c=>c.matches(sel));el.style.setProperty('--d',(Math.max(sib.indexOf(el),0)%3*0.12)+'s')});
   if('IntersectionObserver' in window){
@@ -57,4 +57,23 @@ const menu=document.getElementById('menu');const nav=document.getElementById('na
   const c=document.querySelector('.cover-card');if(!c)return;
   c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*4+'deg');c.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*4+'deg')});
   c.addEventListener('pointerleave',()=>{c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});
+})();
+
+/* web development: scroll-driven car + lite YouTube embed */
+(function(){
+  const sc=document.querySelector('.road-scene');
+  if(sc){
+    const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cur=0,tgt=0,run=false;
+    const calc=()=>{const r=sc.getBoundingClientRect(),vh=innerHeight;const p=(vh-r.top)/(vh+r.height);tgt=Math.min(1,Math.max(0,(p-.08)/.84))};
+    const step=()=>{const d=tgt-cur;if(reduce||Math.abs(d)<.0004){cur=tgt;run=false;sc.classList.remove('moving')}else{cur+=d*.09;sc.classList.toggle('moving',Math.abs(d)>.002)}sc.style.setProperty('--car',cur.toFixed(4));if(run)requestAnimationFrame(step)};
+    const kick=()=>{calc();if(!run){run=true;requestAnimationFrame(step)}};
+    addEventListener('scroll',kick,{passive:true});addEventListener('resize',kick);kick();
+  }
+  document.querySelectorAll('.yt-card').forEach(b=>b.addEventListener('click',()=>{
+    const f=document.createElement('iframe');f.className='yt-frame';
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0';
+    f.title='YouTube video';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+    b.replaceWith(f);
+  }));
 })();
